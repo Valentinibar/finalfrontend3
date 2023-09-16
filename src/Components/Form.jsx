@@ -13,7 +13,7 @@ const Form = () => {
     setUsuario({ ...usuario, nombreCompleto: "", email: "" }); 
     setShow(false)
     }, 
-  2500); 
+  3000); 
   }
 
   const handleSubmit = ()=>{
@@ -45,7 +45,7 @@ const Form = () => {
       </div>
 
       {show &&  
-      <h5>  Gracias {usuario.nombreCompleto}, te contactaremos cuanto antes vía mail  </h5> 
+      <h5>  Gracias {usuario.nombreCompleto}, te contactaremos cuanto antes vía email  </h5> 
         
         }
       {error && <h5 style={{color: "red"}}  > Por favor verifique su información nuevamente. 
