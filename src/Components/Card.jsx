@@ -29,7 +29,6 @@ const Card = ({dentista}) => {
       <div key={dentista.id}>
       <img src="/images/doctor.jpg"  className='imagendoctor' alt="doctor" />
       <ul>
-      <li><span className="bold">Id:</span> {dentista.id}</li>
       <li><span className="bold">Nombre:</span> {dentista.name}</li>
       <li><span className="bold">Username:</span> {dentista.username}</li>
       </ul>

@@ -2,28 +2,32 @@ import React from "react";
 import { useGlobalStates } from "./utils/Context";
 import "../Styles/Form.css"
 
-
-
-
-
 const Form = () => {
 
   const {usuario, setUsuario, show, setShow, error, setError} = useGlobalStates();
-  //Aqui deberan implementar el form completo con sus validaciones
-  //Constante para verificar email
+
   const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
-  
+  function reloadPageAfterDelay() {
+    setTimeout(function () {
+    setUsuario({ ...usuario, nombreCompleto: "", email: "" }); 
+    setShow(false)
+    }, 
+  2500); 
+  }
 
   const handleSubmit = ()=>{
     if(usuario.nombreCompleto.length > 5 && (emailRegex.test(usuario.email))) {   
         setShow(true)
         setError(false)
+        reloadPageAfterDelay();
     }
     else{setError(true)
         setShow(false)
     }
   }
+
+
 
 
   return (  
@@ -40,7 +44,10 @@ const Form = () => {
       <button className='boton' onClick={handleSubmit} >Enviar</button>
       </div>
 
-      {show &&  <h5>  Gracias {usuario.nombreCompleto}, te contactaremos cuanto antes vía mail  </h5> }
+      {show &&  
+      <h5>  Gracias {usuario.nombreCompleto}, te contactaremos cuanto antes vía mail  </h5> 
+        
+        }
       {error && <h5 style={{color: "red"}}  > Por favor verifique su información nuevamente. 
       El nombre debe tener una longitud mayor a 5. Verifique el formato de su email.   </h5>}
 

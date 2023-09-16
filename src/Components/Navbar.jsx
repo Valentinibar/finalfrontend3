@@ -24,7 +24,7 @@ const Navbar = () => {
       <Link to="/Destacados"> <h4 style={{margin:10}}>Destacados</h4> </Link>
       
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      <button onClick={toggleTheme}>Change theme</button>
+      <button onClick={toggleTheme}>Cambiar modo</button>
     </nav>
   )
 }

@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <main className={themeClass} >
-    <h1>Home</h1>
+    <h1>Nuestro especialistas</h1>
     <div className='contenedor' >
     {state.lista.map(dentista => <Card dentista= {dentista} key={dentista.id}/>)}
     </div>
